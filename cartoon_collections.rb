@@ -3,6 +3,7 @@ dwarves = ["Doc", "Dopey", "Bashful", "Grumpy"]
 def roll_call_dwarves(array)
  array.each_with_index do |name, index|
   puts "#{index+1}. #{name}"
+  return array 
  end 
 end 
 
@@ -33,12 +34,25 @@ long_planeteer_calls(assorted_words)
 snacks = ["crackers", "gouda", "thyme"]
 soup = ["tomato soup", "cheddar", "oyster crackers", "gouda"]
 ingredients = ["garlic", "bread", "rosemary"]
+drinks = ["coke", "cheddar", "cranberry"]
+banana = ["gouda", "banana", "beef", "swiss"]
 
 def find_the_cheese(array)
-  cheese_flavors = ["cheddar", "gouda", "camembert"]
-    array.find do |flavor|
+  cheese_flavors = ["cheddar", "gouda", "camembert", "swiss"]
+   array.find do |flavor|
     cheese_flavors.include?(flavor)
   end 
 end
+
+
+def words_that_start_with_b(words)
+  words.select do |names|
+    names[0] == "b"
+  end
+end
+
+words_that_start_with_b(['brian', 'joe', 'james']) # ['brian']
+words_that_start_with_b(['brianna', 'banana', 'cherry']) # ['brianna', 'banana']
+words_that_start_with_b(['chase', 'jerry', 'alex']) # []
   
 find_the_cheese(ingredients)
